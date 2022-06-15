@@ -1,7 +1,7 @@
 package main
 
 import (
-	liskovsubstitution "design-patterns-in-go/SOLID/liskov-substitution"
+	liskovsubstitution "design-patterns-in-go/SOLID/liskov_substitution"
 	openclosed "design-patterns-in-go/SOLID/open_closed"
 	srp "design-patterns-in-go/SOLID/single_responsability"
 	"fmt"

@@ -22,3 +22,11 @@ that we rely on.
 A nice examples of this principle I found @:
 
 https://blog.knoldus.com/what-is-liskov-substitution-principle-lsp-with-real-world-examples/
+
+## 1.4 Interface Segregation Principle
+You simply shoulnd't put too much into interface.
+Stick to the go std library inerface style ("Reader","Writer","Closer", etc.)
+Try to maintain the interfaces small and if they get bigger, just split them.
+
+If we construct an interface with many methods and then we need a type that doesn't
+have all the methods it will not pass as an argument to the function that expects the interface. 
