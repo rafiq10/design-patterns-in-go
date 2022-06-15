@@ -49,7 +49,7 @@ func main() {
 	}
 
 	// lsp
-	rc := &liskovsubstitution.Rectangle{2, 3}
+	rc := &liskovsubstitution.Rectangle{Width: 2, Height: 3}
 	liskovsubstitution.UseIt(rc)
 
 	sq := liskovsubstitution.NewSquare(5)
