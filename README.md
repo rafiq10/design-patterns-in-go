@@ -11,3 +11,10 @@ Types should be:
  -  Closed for modification
 
 Example: Enterprise pattern of "Specification"
+
+## 1.3 Liskov Substitution Principle
+Doesn't apply to Go because go doesn't have inheritance.
+"Objects of a superclass should be replaceable with objects of its subclasses without breaking the application"
+
+The behavior of implementers of a particular interface should not brake the core behaviors
+that we rely on.

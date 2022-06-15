@@ -18,9 +18,9 @@ func main() {
 
 	// ocp
 
-	apple := &openclosed.Product{"Apple", openclosed.Green, openclosed.Small}
-	tree := &openclosed.Product{"Tree", openclosed.Green, openclosed.Large}
-	house := &openclosed.Product{"House", openclosed.Blue, openclosed.Medium}
+	apple := &openclosed.Product{Name: "Apple", Color: openclosed.Green, Size: openclosed.Small}
+	tree := &openclosed.Product{Name: "Tree", Color: openclosed.Green, Size: openclosed.Large}
+	house := &openclosed.Product{Name: "House", Color: openclosed.Blue, Size: openclosed.Medium}
 
 	products := []openclosed.Product{*apple, *tree, *house}
 	f := openclosed.Filter{}
@@ -33,14 +33,14 @@ func main() {
 
 	// Better way
 	fmt.Println("Green products (new):")
-	greenSpec := openclosed.ColorSpecification{openclosed.Green}
+	greenSpec := openclosed.ColorSpecification{Color: openclosed.Green}
 	bf := openclosed.BetterFilter{}
 	for _, v := range bf.Filter(products, &greenSpec) {
 		fmt.Printf(" - %s is green \n", v.Name)
 	}
 
-	largeSpec := openclosed.SizeSpecification{openclosed.Large}
-	lgSpec := openclosed.AndSpecification{greenSpec, largeSpec}
+	largeSpec := openclosed.SizeSpecification{Size: openclosed.Large}
+	lgSpec := openclosed.AndSpecification{FirstSpec: greenSpec, SecondSpec: largeSpec}
 
 	fmt.Println("Large green and products:")
 	for _, v := range bf.Filter(products, &lgSpec) {
