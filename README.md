@@ -20,4 +20,5 @@ The behavior of implementers of a particular interface should not brake the core
 that we rely on.
 
 A nice examples of this principle I found @:
+
 https://blog.knoldus.com/what-is-liskov-substitution-principle-lsp-with-real-world-examples/
