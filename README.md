@@ -18,3 +18,6 @@ Doesn't apply to Go because go doesn't have inheritance.
 
 The behavior of implementers of a particular interface should not brake the core behaviors
 that we rely on.
+
+A nice examples of this principle I found @:
+https://blog.knoldus.com/what-is-liskov-substitution-principle-lsp-with-real-world-examples/
