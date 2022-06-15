@@ -3,30 +3,30 @@ package liskovsubstitution
 import "fmt"
 
 type Sized interface {
-	GetWith() int
+	GetWidth() int
 	SetWidth(width int)
 	GetHeight() int
 	SetHeight(height int)
 }
 
 type Rectangle struct {
-	width, height int
+	Width, Height int
 }
 
 func (r *Rectangle) GetWidth() int {
-	return r.width
+	return r.Width
 }
 
 func (r *Rectangle) SetWidth(width int) {
-	r.width = width
+	r.Width = width
 }
 
 func (r *Rectangle) GetHeight() int {
-	return r.height
+	return r.Height
 }
 
 func (r *Rectangle) SetHeight(height int) {
-	r.height = height
+	r.Height = height
 }
 
 type Square struct {
@@ -34,45 +34,45 @@ type Square struct {
 }
 
 func (r *Square) GetWidth() int {
-	return r.width
+	return r.Width
 }
 
 func (r *Square) SetWidth(width int) {
-	r.width = width
-	r.height = width
+	r.Width = width
+	r.Height = width
 }
 
 func (r *Square) GetHeight() int {
-	return r.height
+	return r.Height
 }
 
 func (r *Square) SetHeight(height int) {
-	r.width = height
-	r.height = height
+	r.Width = height
+	r.Height = height
 }
 
 func NewSquare(size int) *Square {
 	sq := Square{}
-	sq.width = size
-	sq.height = size
+	sq.Width = size
+	sq.Height = size
 	return &sq
 }
 
 // This could solve the problem
 type Square2 struct {
-	size int // both height and width
+	Size int // both height and width
 }
 
 func (s *Square2) Rectangle() Rectangle {
-	return Rectangle{height: s.size, width: s.size}
+	return Rectangle{Height: s.Size, Width: s.Size}
 }
 
 // It should work even if we extend the original object (ie: from rectangle to square)
 func UseIt(sized Sized) {
-	width := sized.GetWith()
+	width := sized.GetWidth()
 	// sized.SetHeight(10) sets both height and with for square afer extending the rectangle object
 	sized.SetHeight(10)
 	expectedArea := 10 * width
-	actualArea := sized.GetWith() * sized.GetHeight()
-	fmt.Printf("Expected area: %d, Got area: %d", expectedArea, actualArea)
+	actualArea := sized.GetWidth() * sized.GetHeight()
+	fmt.Printf("Expected area: %d, Got area: %d\n", expectedArea, actualArea)
 }

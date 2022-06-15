@@ -1,6 +1,7 @@
 package main
 
 import (
+	liskovsubstitution "design-patterns-in-go/SOLID/liskov-substitution"
 	openclosed "design-patterns-in-go/SOLID/open_closed"
 	srp "design-patterns-in-go/SOLID/single_responsability"
 	"fmt"
@@ -46,4 +47,15 @@ func main() {
 	for _, v := range bf.Filter(products, &lgSpec) {
 		fmt.Printf(" - %s is large and green \n", v.Name)
 	}
+
+	// lsp
+	rc := &liskovsubstitution.Rectangle{2, 3}
+	liskovsubstitution.UseIt(rc)
+
+	sq := liskovsubstitution.NewSquare(5)
+	liskovsubstitution.UseIt(sq)
+
+	sq2 := liskovsubstitution.Square2{Size: 5}
+	rc2 := sq2.Rectangle()
+	liskovsubstitution.UseIt(&rc2)
 }
