@@ -54,3 +54,9 @@ Both of them should depend on abstractions: typically we mean interfaces in Go.
 - Fluent interfaces enable to chain calls together
 - it returns the receiver object so you can chain it
 - chaining the methods helps building the object
+
+## 2.2 Builder Facets
+- It splits the building of an object into multiple logical builder structs
+- It allows, through the types, accessing the methods of builders that refer to the single fields
+    of the principal struct
+- Itallos chaining the methods to set the fields (in any order)
