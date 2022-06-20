@@ -2,6 +2,7 @@ package main
 
 import (
 	bf "builder/builder_facets"
+	bp "builder/builder_parameter"
 	cb "builder/creational_builder"
 	"fmt"
 )
@@ -31,4 +32,17 @@ func main() {
 		Earning(50000)
 	person := pb.Build()
 	fmt.Println(person)
+
+	// builder parameter
+	// from the client's perspective they have to call SendEmail
+	// and the user sees that there is a function to be provided to
+	bp.SendEmail(func(b *bp.EmailBuilder) {
+		// you don't have the access to the email object itself
+		// you just have an access to the builder
+		// the client of the API has the option to initialize the email object through the action function
+		b.From("foo@bar.com").
+			To("bar@baz.com").
+			Subject("Hello").
+			Body("Nice to meet you")
+	})
 }
