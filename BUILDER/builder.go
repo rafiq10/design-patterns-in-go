@@ -4,6 +4,8 @@ import (
 	bf "builder/builder_facets"
 	bp "builder/builder_parameter"
 	cb "builder/creational_builder"
+	fb "builder/functional_builder"
+
 	"fmt"
 )
 
@@ -45,4 +47,12 @@ func main() {
 			Subject("Hello").
 			Body("Nice to meet you")
 	})
+
+	// functional builder
+	bld := fb.PersonBuilder{}
+	prs := bld.
+		Called("Rafa").
+		WorksAs("Programmer").
+		Build()
+	fmt.Println(*prs)
 }
