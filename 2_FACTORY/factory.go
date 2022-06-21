@@ -4,6 +4,7 @@ import (
 	ff "factory/factory_function"
 	fgen "factory/factory_generator"
 	intf "factory/interface_factory"
+	pf "factory/prototype_factory"
 	"fmt"
 )
 
@@ -38,4 +39,9 @@ func main() {
 	bossFactory.AnnualIncome = 120000
 	boss = bossFactory.Create("Andrzej")
 	fmt.Println(boss)
+
+	// 3.4 Prototype Factory
+	d := pf.NewEmployee(pf.Developer)
+	d.Name = "Rafal"
+	fmt.Println(d)
 }
