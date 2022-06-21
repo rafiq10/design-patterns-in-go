@@ -85,6 +85,8 @@ Both of them should depend on abstractions: typically we mean interfaces in Go.
 ## 3. FACTORY
 A component responsible solely for the wholesale (no-piecewise) creation of object.
 
+- a helper function for making struct instances
+- any entity that can take care of object creation
 - ways of controlling how an object is constructed
 - Motivation: object creation becomes too complicated
 - If there are a lot of elements to initialize we may want to give some default values to some elements
