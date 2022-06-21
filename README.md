@@ -44,11 +44,16 @@ Both of them should depend on abstractions: typically we mean interfaces in Go.
 
 
 ## 2. BUILDER
+- A builder is a separate component used for building an object
 - Some objects are simple and can be created in a single constructor call
 - Other objects are more complicated to creae them at once
 - Having a factory function with 10 arguments is not productive
 - Instead, opt for piecewise (piece-by-piece) constructions
 - Builder provides an API for constructing an object step-by-step
+- To make builder fluent, rerturn the receiver - it allows chaining actions/methods
+- Different facets of an object can be constructed with different builders 
+    working in tandem via a common struct
+- 
 
 ## 2.1 Creational Builder
 - Fluent interfaces enable to chain calls together
@@ -60,3 +65,29 @@ Both of them should depend on abstractions: typically we mean interfaces in Go.
 - It allows, through the types, accessing the methods of builders that refer to the single fields
     of the principal struct
 - Itallos chaining the methods to set the fields (in any order)
+
+## 2.3 Builder Parameter
+- Hide the objects behind the builder and API's user doesn't touch the object directly
+- It forces the API client to use builder instead of the object directly
+- The builder ensures the object is constructed correctly
+- The API client has to provide the action function that initializes email object through the builder 
+- The sendMailImpl function uses the email object hidden behind the builder
+- We use the fluent interface to construct the email thorough the builder
+
+## 2.4 Functinal Builder
+- functional programming with builder pattern in go
+- enables delayed application
+- the builder instead of just doing the modifications in place can keep a list of actions, 
+    or list of changes to perform upon the object that is being constructed
+- with the .Build() we create the default implementation of the object and we apply the actions stored on the object
+
+
+## 3. FACTORY
+A component responsible solely for the wholesale (no-piecewise) creation of object.
+
+- ways of controlling how an object is constructed
+- Motivation: object creation becomes too complicated
+- If there are a lot of elements to initialize we may want to give some default values to some elements
+- Wholesale object creation (non-piecewise, unlike Builder) can be outsourced to:
+    * A separate function (Factory Function, a.k.a. Constructor)
+    * A separate struct (Factory)
