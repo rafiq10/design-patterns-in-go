@@ -44,4 +44,12 @@ func main() {
 	d := pf.NewEmployee(pf.Developer)
 	d.Name = "Rafal"
 	fmt.Println(d)
+
+	// interests
+	siCalculator := pf.NewCalculator(pf.Simple, 10000, 90, 2)
+	p1 := siCalculator.CalculateInerest() // Invokes simple interest calculation logic
+	fmt.Println(p1)
+	ciCalculator := pf.NewCalculator(pf.Compound, 10000, 90, 2)
+	p1 = ciCalculator.CalculateInerest() // Invokes compound interest calculation logic
+	fmt.Println(p1)
 }

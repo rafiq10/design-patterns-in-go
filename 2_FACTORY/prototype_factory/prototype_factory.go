@@ -1,5 +1,7 @@
 package prototypefactory
 
+// on demand objects created depending on an enum
+// we could use interfaces instead of struct
 type Employee struct {
 	Name, Position string
 	AnnualIncome   int
