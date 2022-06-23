@@ -5,6 +5,7 @@ import (
 	cm "prototype/copy_method"
 	cts "prototype/copy_through_serialization"
 	dc "prototype/deep_copying"
+	pf "prototype/prototype_factory"
 )
 
 func main() {
@@ -55,4 +56,10 @@ func main() {
 	zuza.Friends = append(zuza.Friends, "Klaudia")
 	fmt.Println(robert, robert.Address)
 	fmt.Println(zuza, zuza.Address)
+
+	// prototype factory
+	andrea := pf.NewMainOfficeEmployee("Andrea", 100)
+	paula := pf.NewAuxOfficeEmployee("Paula", 133)
+	fmt.Println(andrea, andrea.Office)
+	fmt.Println(paula, paula.Office)
 }

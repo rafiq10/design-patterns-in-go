@@ -104,3 +104,8 @@ An initialized (partially or fully) object that you copy (clone) and make use of
     * requires a 'deep copy' support (if I copy a struct, what happens to the pointers?
         there might be several pointers pointing to the same object)
 - we can make the cloning convenient (via a Factory)
+
+To implement a prototype, partially construct an object and store it somewhere.
+Deep copy the prototype.
+Customize the resulting instance.
+A prototype factory provides a convenient API for using prototypes.
