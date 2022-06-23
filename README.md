@@ -93,3 +93,14 @@ A component responsible solely for the wholesale (no-piecewise) creation of obje
 - Wholesale object creation (non-piecewise, unlike Builder) can be outsourced to:
     * A separate function (Factory Function, a.k.a. Constructor)
     * A separate struct (Factory)
+
+## 4. PROTOTYPE
+An initialized (partially or fully) object that you copy (clone) and make use of
+
+- complicated objects aren't designed from scratch
+    * they reiterate existing designs
+- an existing (partially or fully constructed) design is a prototype
+- we make a copy of the prototype and customize it
+    * requires a 'deep copy' support (if I copy a struct, what happens to the pointers?
+        there might be several pointers pointing to the same object)
+- we can make the cloning convenient (via a Factory)
