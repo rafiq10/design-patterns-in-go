@@ -109,3 +109,16 @@ To implement a prototype, partially construct an object and store it somewhere.
 Deep copy the prototype.
 Customize the resulting instance.
 A prototype factory provides a convenient API for using prototypes.
+
+## 5. SINGLETON
+Acomponent that is instantiated only once
+
+- for some components it only makes sense to have  one in the system
+    * database repository
+    * object factory - if the factory is stateless (doesn't have any fields) - 
+        there is no point in having more than one instance of the factory
+- the construction cost is expensive (loadin a db)
+    * we want to do it only once
+    * we give everybody the same instance
+- we want to prevent anyone creating additional copies
+- need to take care of lazy instantiation
