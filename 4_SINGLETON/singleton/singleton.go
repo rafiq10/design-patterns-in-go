@@ -11,6 +11,22 @@ import (
 var once sync.Once
 var instance *singletonDB
 
+// introduce an abstraction of the database
+type Database interface {
+	GetPopulation(city string) int
+}
+
+type DummyDb struct {
+	dummyData map[string]int
+}
+
+func (d *DummyDb) GetPopulation(city string) int {
+	if len(d.dummyData) == 0 {
+		d.dummyData = map[string]int{"alpha": 1, "beta": 2, "gamma": 3}
+	}
+	return d.dummyData[city]
+}
+
 type singletonDB struct {
 	capitals map[string]int
 }
@@ -63,6 +79,16 @@ func GetTotalPopulation(cities []string) int {
 
 	for _, city := range cities {
 		result += GetSingletonDB().GetPopulation(city)
+	}
+	return result
+}
+
+// a new function with a Database abstraction as parameter
+func GetTotalPopulationEx(db Database, cities []string) int {
+	var result int
+
+	for _, city := range cities {
+		result += db.GetPopulation(city)
 	}
 	return result
 }

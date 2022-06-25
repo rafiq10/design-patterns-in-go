@@ -19,4 +19,10 @@ func main() {
 
 	ok := tp == 34900000
 	fmt.Println(ok)
+
+	// singleton dependency inversion
+
+	names := []string{"alpha", "gamma"}
+	tp2 := s.GetTotalPopulationEx(&s.DummyDb{}, names)
+	fmt.Println(tp2 == 4)
 }

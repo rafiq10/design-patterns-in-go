@@ -123,5 +123,8 @@ Acomponent that is instantiated only once
 - we want to prevent anyone creating additional copies
 - need to take care of lazy instantiation
 
+1. Lazy one-time initialization with sync.Once
+2. Adhere to dependency inversion: depend on interfaces, not concrete types
+    (we want our singleton implement the interface so that we can test it with other concrete implementation)
 Problems with singleton:
 - often breaks the dependency inversion principle (depend on an interface/abstraction and not a concrete type)
