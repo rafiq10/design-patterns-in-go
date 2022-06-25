@@ -122,3 +122,6 @@ Acomponent that is instantiated only once
     * we give everybody the same instance
 - we want to prevent anyone creating additional copies
 - need to take care of lazy instantiation
+
+Problems with singleton:
+- often breaks the dependency inversion principle (depend on an interface/abstraction and not a concrete type)

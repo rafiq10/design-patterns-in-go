@@ -57,3 +57,12 @@ func readData(path string) (map[string]int, error) {
 
 	return result, nil
 }
+
+func GetTotalPopulation(cities []string) int {
+	var result int
+
+	for _, city := range cities {
+		result += GetSingletonDB().GetPopulation(city)
+	}
+	return result
+}
