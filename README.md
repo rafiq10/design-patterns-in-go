@@ -136,3 +136,18 @@ We use a special device to give us the interface we require from the interface w
 * Determine the API you have and the API you need
 * Create a component which aggregates (has a pointer to, ...) the adaptee
 * Intermediate representations can pile up: use caching and other optimizations
+
+## 6. BRIDGE
+A mechanism that decouples an interface (hierarchy) from an implementation (hierarchy).
+
+It tries to avoid a compleity explosion.
+
+- Prevents a Cartesian Product complexity explosion
+- Example:
+    * Common type ThreadScheduler
+    * Can be preemptive or cooperative
+    * Can run on Windows or LinuxS
+    * End up with a 2x2 scenario: WindowsPTS, UnixPTS, WindowsCTS, UnixCTS
+
+Separation of hierarchies.
+A stronger form of encapsulation.
