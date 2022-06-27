@@ -128,3 +128,7 @@ Acomponent that is instantiated only once
     (we want our singleton implement the interface so that we can test it with other concrete implementation)
 Problems with singleton:
 - often breaks the dependency inversion principle (depend on an interface/abstraction and not a concrete type)
+
+## 5. ADAPTER
+A construct which adapts an existing interface X to conform to the required interfaceY.
+We use a special device to give us the interface we require from the interface we have.
