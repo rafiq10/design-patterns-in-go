@@ -132,3 +132,7 @@ Problems with singleton:
 ## 5. ADAPTER
 A construct which adapts an existing interface X to conform to the required interfaceY.
 We use a special device to give us the interface we require from the interface we have.
+
+* Determine the API you have and the API you need
+* Create a component which aggregates (has a pointer to, ...) the adaptee
+* Intermediate representations can pile up: use caching and other optimizations
