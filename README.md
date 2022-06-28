@@ -163,3 +163,7 @@ Motivation:
 - composite design pattern is used to treat both single (scalar) and composite objects uniformly
     (they would have the same interface)
     * i.e., Foo and []Foo have a common API
+
+* some composed and singular objects need identical behaviors
+* composite pattern allows us treat both singular and composed objects uniformly guarding them behind the interface
+* Iteration supported with the Iterator design pattern 
