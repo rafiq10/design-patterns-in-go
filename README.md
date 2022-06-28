@@ -151,3 +151,15 @@ It tries to avoid a compleity explosion.
 
 Separation of hierarchies.
 A stronger form of encapsulation.
+
+## 7. COMPOSITE
+A mechanism for treating individual (scalar) objects and compositions of objects in a uniform manner.
+
+Motivation:
+- objects use other objects' fields/methods through embedding
+- composition lets us make compund objects
+    * e.g., a mathematical expression composed of simple expressions; or
+    * a shape group made of several different shapes
+- composite design pattern is used to treat both single (scalar) and composite objects uniformly
+    (they would have the same interface)
+    * i.e., Foo and []Foo have a common API
