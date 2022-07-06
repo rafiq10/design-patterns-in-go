@@ -181,3 +181,20 @@ Motivation:
 * Decorator embeds the decorated object
 * Adds utility fields and methods to augment the object's features
 * Often used to emulate multiple inheritance (may require extra work)
+
+## 9. FACADE
+Provides a simple, easy to understand/use interface over a large and sophisticated body of code. 
+
+Motivation:
+- Balancing complexity and presentation/usability
+- typical home:
+    - many subsystems (electrical, sanitation)
+    - comlpex internal structure (floor layers)
+    - end users is not exposed to internals
+- software:
+    - many systems working to provide flexibility, but
+    - API consumers want it to 'just work'
+
+* Build a Facade to provide a simplified API over a set of components
+* May wish to (optionally) expose internals through facade
+* May allow users to 'escalate' to use more complex APIs if they need to
