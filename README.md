@@ -214,3 +214,4 @@ Motivation:
 
 * Store common data externally
 * Specify an index or a pointer into the external data store
+* Define the idea of 'ranges' on homogenous collections and store data related to those ranges
