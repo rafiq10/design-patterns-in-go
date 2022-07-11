@@ -1,0 +1,15 @@
+go 1.18
+
+use (
+	./0_SOLID/
+	./10_FLYWEIGHT/
+	./1_BUILDER/
+	./2_FACTORY/
+	./3_PROTOTYPE/
+	./4_SINGLETON/
+	./5_ADAPTER/
+	./6_BRIDGE/
+	./7_COMPOSITE/
+	./8_DECORATOR/
+	./9_FACADE/
+)

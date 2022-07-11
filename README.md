@@ -198,3 +198,19 @@ Motivation:
 * Build a Facade to provide a simplified API over a set of components
 * May wish to (optionally) expose internals through facade
 * May allow users to 'escalate' to use more complex APIs if they need to
+
+## 10. FLYWEIGHT
+A space optimization technique that lets us use less memory by storing externally data associated with siilar objects.
+
+Motivation:
+- Avoid redundancy when storing data
+- e.g. in online games:
+    - lots of users with identical first/last names
+    - no sense in storing same first/last name over and over again
+    - store the list of names and references to them (indices, pointers, etc.)
+- e.g. bold or italic formatting
+    - don't want each character to have a formatting character
+    - operate on *ranges* (e.g. line number, start/end position)
+
+* Store common data externally
+* Specify an index or a pointer into the external data store
